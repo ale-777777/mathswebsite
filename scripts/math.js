@@ -120,4 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {
     checkAnswers('additionForm', answers.addition);
     checkAnswers('subtractionForm', answers.subtraction);
     checkAnswers('multiplicationForm', answers.multiplication);
+});
+
+// Go Up Button functionality
+window.addEventListener('scroll', function() {
+    const goUpButton = document.getElementById('go-up');
+    if (window.scrollY > 300) {
+        goUpButton.style.display = 'block';
+    } else {
+        goUpButton.style.display = 'none';
+    }
 }); 
