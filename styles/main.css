@@ -10,23 +10,55 @@ body {
 
 /* Navigation */
 nav {
-    background-color: #4b9eff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     padding: 15px;
-    text-align: center;
+    background-color: #f8f9fa;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav a {
-    color: white;
     text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 20px;
-    background-color: #1e7bff;
-    border-radius: 15px;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    font-size: 16px;
+    min-width: 100px;
+    text-align: center;
 }
 
 nav a:hover {
-    background-color: #0056d6;
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    nav {
+        padding: 10px 5px;
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 6px 10px;
+        font-size: 14px;
+        min-width: auto;
+        flex: 1 1 calc(50% - 10px); /* Two items per row on very small screens */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    nav a {
+        flex: 1 1 100%; /* Stack vertically on extremely small screens */
+    }
 }
 
 /* Section styles */
@@ -294,4 +326,40 @@ footer p {
 
 .profile-image:hover {
     transform: scale(1.05);
+}
+
+.go-up-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.go-up-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+@media screen and (max-width: 600px) {
+    .go-up-button {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
 } 
