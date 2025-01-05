@@ -1,6 +1,8 @@
 /* Base styles */
 body {
-    font-family: 'Comic Sans MS', cursive;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+                 "Helvetica Neue", Arial, sans-serif, 
+                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     margin: 0;
     padding: 0;
     background-color: #e6f3ff;
@@ -42,11 +44,23 @@ h1 {
     text-align: center;
     color: #0056d6;
     font-size: 36px;
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, 
+                 "Segoe UI", Roboto, "Helvetica Neue", Arial, 
+                 sans-serif;
 }
 
 h2 {
     color: #1e7bff;
     font-size: 28px;
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, 
+                 "Segoe UI", Roboto, "Helvetica Neue", Arial, 
+                 sans-serif;
+}
+
+h3 {
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, 
+                 "Segoe UI", Roboto, "Helvetica Neue", Arial, 
+                 sans-serif;
 }
 
 /* Images */
@@ -84,6 +98,8 @@ h2 {
     background-color: white;
     border-radius: 8px;
     border: 2px solid #4b9eff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 
+                 "Helvetica Neue", Arial, sans-serif;
 }
 
 input[type="number"] {
@@ -93,6 +109,8 @@ input[type="number"] {
     border: 2px solid #1e7bff;
     border-radius: 5px;
     margin: 0 10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 
+                 "Helvetica Neue", Arial, sans-serif;
 }
 
 button {
@@ -104,6 +122,8 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin: 10px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 
+                 "Helvetica Neue", Arial, sans-serif;
 }
 
 button:hover {
