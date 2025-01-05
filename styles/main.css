@@ -1,0 +1,277 @@
+/* Base styles */
+body {
+    font-family: 'Comic Sans MS', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f3ff;
+}
+
+/* Navigation */
+nav {
+    background-color: #4b9eff;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 20px;
+    background-color: #1e7bff;
+    border-radius: 15px;
+}
+
+nav a:hover {
+    background-color: #0056d6;
+}
+
+/* Section styles */
+.section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #0056d6;
+    font-size: 36px;
+}
+
+h2 {
+    color: #1e7bff;
+    font-size: 28px;
+}
+
+/* Images */
+.image-container {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px 0;
+}
+
+.math-image {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    object-fit: contain;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+/* Exercise forms */
+.exercise-form {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.question {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid #4b9eff;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #1e7bff;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+button {
+    background-color: #1e7bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #0056d6;
+}
+
+.result {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.correct {
+    color: #008000;
+}
+
+.incorrect {
+    color: #ff0000;
+}
+
+/* Paragraphs */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2c4c7c;
+}
+
+/* Footer */
+footer {
+    background-color: #4b9eff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+footer p {
+    color: white;
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Game styles */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+    background-color: #4b9eff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #e6f3ff;
+}
+
+#game-status {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #1e7bff;
+    font-weight: bold;
+}
+
+#reset-button {
+    background-color: #1e7bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+#reset-button:hover {
+    background-color: #0056d6;
+}
+
+/* Add these styles to your existing CSS */
+.player-form {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+}
+
+.input-group {
+    margin: 10px 0;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #1e7bff;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 200px;
+    padding: 8px;
+    border: 2px solid #4b9eff;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group input::placeholder {
+    color: #999;
+}
+
+.play-again-btn {
+    display: none;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.play-again-btn:hover {
+    background-color: #45a049;
+}
+
+.profile-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid #FFD700;
+    box-shadow: 
+        0 0 0 4px #FF69B4,
+        0 0 0 12px #87CEEB,
+        0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+} 
