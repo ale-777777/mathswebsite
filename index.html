@@ -240,6 +240,35 @@
         </div>
 
         <hr style="margin: 30px 0; border-color: #ffb380;">
+        <h3>🐍 Spelling Snake!</h3>
+        <p>Use arrow keys (or buttons below) to guide the snake — eat the letters in order to spell the word!</p>
+        <div class="snake-game">
+            <div id="snake-status">Press Start to play!</div>
+            <div id="snake-word-display">Word: <span id="target-word">-</span></div>
+            <div id="snake-progress">Spell: <span id="spell-progress">-</span></div>
+            <canvas id="snake-canvas" width="400" height="400"></canvas>
+            <div class="snake-controls">
+                <button class="snake-btn" id="snake-up">▲</button>
+                <div>
+                    <button class="snake-btn" id="snake-left">◀</button>
+                    <button class="snake-btn" id="snake-down">▼</button>
+                    <button class="snake-btn" id="snake-right">▶</button>
+                </div>
+            </div>
+            <button id="snake-start">Start</button>
+        </div>
+
+        <hr style="margin: 30px 0; border-color: #ffb380;">
+        <h3>🧠 Memory Match!</h3>
+        <p>Flip cards to find matching pairs — the cards were designed by AI!</p>
+        <div class="memory-game">
+            <div id="memory-status">Press Start to play!</div>
+            <div id="memory-score">Pairs: 0/8 | Moves: 0</div>
+            <div class="memory-grid" id="memory-grid"></div>
+            <button id="memory-start">Start</button>
+        </div>
+
+        <hr style="margin: 30px 0; border-color: #ffb380;">
         <h3>Tic Tac Toe</h3>
 
         <div class="game-container">
@@ -276,5 +305,6 @@
 
     <script src="scripts/math.js"></script>
     <script src="scripts/game.js"></script>
+    <script src="scripts/games2.js"></script>
 </body>
 </html> 
