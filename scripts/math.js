@@ -40,9 +40,9 @@ function generateQuestions() {
         questions.multiplication.push(`${mult1} × ${mult2} = `);
         answers.multiplication[`mult${i}`] = mult1 * mult2;
 
-        // Division: pick divisor and result first so answer is always a whole number
-        const divisor = getRandomInt(2, 5);
-        const result = getRandomInt(1, 10);
+        // Division: small numbers only so it's easy for kids
+        const divisor = getRandomInt(2, 3);
+        const result = getRandomInt(1, 5);
         const dividend = divisor * result;
         questions.division.push(`${dividend} ÷ ${divisor} = `);
         answers.division[`div${i}`] = result;
