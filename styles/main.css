@@ -362,4 +362,29 @@ footer p {
 
 html {
     scroll-behavior: smooth;
+}
+
+/* Division section - orange theme */
+#division h2 {
+    color: #e65c00;
+}
+
+#division .exercise-form {
+    background-color: #fff4ec;
+}
+
+#division .question {
+    border-color: #ff8c42;
+}
+
+#division input[type="number"] {
+    border-color: #e65c00;
+}
+
+#division button[type="submit"] {
+    background-color: #e65c00;
+}
+
+#division button[type="submit"]:hover {
+    background-color: #b34700;
 } 
