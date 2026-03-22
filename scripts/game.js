@@ -128,6 +128,86 @@ class TicTacToe {
     }
 }
 
+class PenaltyShootout {
+    constructor() {
+        this.goals = 0;
+        this.saves = 0;
+        this.active = false;
+        this.status = document.getElementById('penalty-status');
+        this.scoreDisplay = document.getElementById('penalty-score');
+        this.goalkeeper = document.getElementById('goalkeeper');
+        this.startBtn = document.getElementById('penalty-start');
+        this.zones = document.querySelectorAll('.goal-zone');
+
+        this.startBtn.addEventListener('click', () => this.start());
+        this.zones.forEach(zone => zone.addEventListener('click', (e) => this.shoot(e.currentTarget)));
+    }
+
+    start() {
+        this.goals = 0;
+        this.saves = 0;
+        this.active = true;
+        this.startBtn.style.display = 'none';
+        this.updateScore();
+        this.status.textContent = 'Pick a zone to shoot! ⚽';
+        this.goalkeeper.style.left = '50%';
+        this.goalkeeper.className = 'goalkeeper';
+        this.zones.forEach(z => { z.className = 'goal-zone'; z.style.pointerEvents = 'auto'; });
+    }
+
+    shoot(zone) {
+        if (!this.active) return;
+        this.zones.forEach(z => z.style.pointerEvents = 'none');
+
+        const shotZone = parseInt(zone.dataset.zone);
+        const keeperZone = Math.floor(Math.random() * 4);
+        const saved = shotZone === keeperZone;
+
+        // Move goalkeeper visual to the saved zone
+        const positions = ['15%', '75%', '15%', '75%'];
+        this.goalkeeper.style.left = positions[keeperZone];
+        this.goalkeeper.style.top = keeperZone < 2 ? '10%' : '60%';
+
+        if (saved) {
+            this.saves++;
+            zone.className = 'goal-zone saved';
+            this.status.textContent = '🧤 Saved! The keeper got it!';
+        } else {
+            this.goals++;
+            zone.className = 'goal-zone scored';
+            this.status.textContent = '⚽ GOAL!';
+        }
+
+        this.updateScore();
+
+        setTimeout(() => {
+            if (this.goals >= 5) {
+                this.status.textContent = '🎉 You win! Amazing shooting!';
+                this.end();
+            } else if (this.saves >= 3) {
+                this.status.textContent = '😅 The keeper wins! Better luck next time!';
+                this.end();
+            } else {
+                this.zones.forEach(z => { z.className = 'goal-zone'; z.style.pointerEvents = 'auto'; });
+                this.goalkeeper.style.left = '50%';
+                this.goalkeeper.style.top = '30%';
+                this.status.textContent = 'Pick a zone to shoot! ⚽';
+            }
+        }, 1000);
+    }
+
+    end() {
+        this.active = false;
+        this.startBtn.textContent = 'Play Again';
+        this.startBtn.style.display = 'inline-block';
+    }
+
+    updateScore() {
+        this.scoreDisplay.textContent = `Goals: ${this.goals} | Saves: ${this.saves}`;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     new TicTacToe();
+    new PenaltyShootout();
 }); 

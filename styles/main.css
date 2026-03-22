@@ -360,6 +360,86 @@ footer p {
     }
 }
 
+/* Penalty shootout game */
+.penalty-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+#penalty-status {
+    font-size: 22px;
+    font-weight: bold;
+    color: #e65c00;
+    min-height: 30px;
+}
+
+#penalty-score {
+    font-size: 20px;
+    font-weight: bold;
+    color: #7a3000;
+}
+
+.goal {
+    position: relative;
+    width: 320px;
+    height: 200px;
+    border: 6px solid #7a3000;
+    border-bottom: none;
+    background: #c8f0a0;
+    border-radius: 6px 6px 0 0;
+    overflow: hidden;
+}
+
+.goalkeeper {
+    position: absolute;
+    font-size: 36px;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    transition: left 0.3s ease, top 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.goal-zones {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.goal-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.3);
+    border: 1px dashed rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 1;
+}
+
+.goal-zone:hover {
+    background: rgba(230, 92, 0, 0.2);
+    color: #e65c00;
+}
+
+.goal-zone.scored {
+    background: rgba(0, 180, 0, 0.4);
+    color: #006600;
+}
+
+.goal-zone.saved {
+    background: rgba(255, 0, 0, 0.3);
+    color: #990000;
+}
+
 html {
     scroll-behavior: smooth;
 }

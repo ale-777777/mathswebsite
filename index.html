@@ -219,8 +219,28 @@
     </div>
 
     <div class="section" id="fun">
-        <h2>Fun Time - Let's Play Tic Tac Toe! 🎮</h2>
-        <p>Take a break and play a game with a friend!</p>
+        <h2>Fun Time - Games! 🎮</h2>
+        <p>Take a break and play a game!</p>
+
+        <h3>⚽ Penalty Shootout!</h3>
+        <p>Click a zone to shoot — can you score 5 goals before the keeper saves 3?</p>
+        <div class="penalty-game">
+            <div id="penalty-status">Press <strong>Start</strong> to play!</div>
+            <div class="goal">
+                <div class="goalkeeper" id="goalkeeper">🧤</div>
+                <div class="goal-zones">
+                    <div class="goal-zone" data-zone="0">Top Left</div>
+                    <div class="goal-zone" data-zone="1">Top Right</div>
+                    <div class="goal-zone" data-zone="2">Bottom Left</div>
+                    <div class="goal-zone" data-zone="3">Bottom Right</div>
+                </div>
+            </div>
+            <div id="penalty-score">Goals: 0 | Saves: 0</div>
+            <button id="penalty-start">Start</button>
+        </div>
+
+        <hr style="margin: 30px 0; border-color: #ffb380;">
+        <h3>Tic Tac Toe</h3>
 
         <div class="game-container">
             <div id="game-status">Enter player names to start!</div>
