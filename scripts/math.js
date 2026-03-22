@@ -9,13 +9,15 @@ function generateQuestions() {
     const questions = {
         addition: [],
         subtraction: [],
-        multiplication: []
+        multiplication: [],
+        division: []
     };
-    
+
     const answers = {
         addition: {},
         subtraction: {},
-        multiplication: {}
+        multiplication: {},
+        division: {}
     };
 
     // Generate 10 questions for each type
@@ -37,6 +39,13 @@ function generateQuestions() {
         const mult2 = getRandomInt(1, 10);
         questions.multiplication.push(`${mult1} × ${mult2} = `);
         answers.multiplication[`mult${i}`] = mult1 * mult2;
+
+        // Division: pick divisor and result first so answer is always a whole number
+        const divisor = getRandomInt(2, 5);
+        const result = getRandomInt(1, 10);
+        const dividend = divisor * result;
+        questions.division.push(`${dividend} ÷ ${divisor} = `);
+        answers.division[`div${i}`] = result;
     }
 
     return { questions, answers };
@@ -63,6 +72,13 @@ function populateForms() {
     questions.multiplication.forEach((question, index) => {
         const questionDiv = multiplicationForm.querySelector(`[id="mult${index + 1}"]`).parentNode;
         questionDiv.innerHTML = `${index + 1}) ${question}<input type="number" id="mult${index + 1}" required>`;
+    });
+
+    // Populate Division Form
+    const divisionForm = document.getElementById('divisionForm');
+    questions.division.forEach((question, index) => {
+        const questionDiv = divisionForm.querySelector(`[id="div${index + 1}"]`).parentNode;
+        questionDiv.innerHTML = `${index + 1}) ${question}<input type="number" id="div${index + 1}" required>`;
     });
 }
 
@@ -120,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkAnswers('additionForm', answers.addition);
     checkAnswers('subtractionForm', answers.subtraction);
     checkAnswers('multiplicationForm', answers.multiplication);
+    checkAnswers('divisionForm', answers.division);
 });
 
 // Go Up Button functionality
