@@ -10,14 +10,16 @@ function generateQuestions() {
         addition: [],
         subtraction: [],
         multiplication: [],
-        division: []
+        division: [],
+        fractions: []
     };
 
     const answers = {
         addition: {},
         subtraction: {},
         multiplication: {},
-        division: {}
+        division: {},
+        fractions: {}
     };
 
     // Generate 10 questions for each type
@@ -46,6 +48,14 @@ function generateQuestions() {
         const dividend = divisor * result;
         questions.division.push(`${dividend} ÷ ${divisor} = `);
         answers.division[`div${i}`] = result;
+
+        // Fractions: fraction of a number (always whole number answers)
+        const denoms = [2, 3, 4];
+        const denom = denoms[Math.floor(Math.random() * denoms.length)];
+        const numer = getRandomInt(1, denom - 1);
+        const whole = getRandomInt(1, 5) * denom;
+        questions.fractions.push(`${numer}/${denom} of ${whole} = `);
+        answers.fractions[`frac${i}`] = numer * (whole / denom);
     }
 
     return { questions, answers };
@@ -79,6 +89,13 @@ function populateForms() {
     questions.division.forEach((question, index) => {
         const questionDiv = divisionForm.querySelector(`[id="div${index + 1}"]`).parentNode;
         questionDiv.innerHTML = `${index + 1}) ${question}<input type="number" id="div${index + 1}" required>`;
+    });
+
+    // Populate Fractions Form
+    const fractionsForm = document.getElementById('fractionsForm');
+    questions.fractions.forEach((question, index) => {
+        const questionDiv = fractionsForm.querySelector(`[id="frac${index + 1}"]`).parentNode;
+        questionDiv.innerHTML = `${index + 1}) ${question}<input type="number" id="frac${index + 1}" required>`;
     });
 }
 
@@ -137,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkAnswers('subtractionForm', answers.subtraction);
     checkAnswers('multiplicationForm', answers.multiplication);
     checkAnswers('divisionForm', answers.division);
+    checkAnswers('fractionsForm', answers.fractions);
 });
 
 // Go Up Button functionality
